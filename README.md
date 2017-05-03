@@ -6,8 +6,8 @@ mrps is a script that quickly and easily displays a markdown file as a presentat
 
 - pandoc
 - reveal.js
-- PyQt5
-- python
+- PyQt5 with PyQt5.qtwebkit (For python3)
+- python3
 
 Before using mrps you must first install pandoc and download reveal.js. There is no official meathod for doing this. I installed pandoc using my Linux Distribution's package manager and cloned the reveal.js github repository.
 
@@ -21,13 +21,13 @@ mrps will not try and create this file with default values either, it is up to y
 
 ### Example ~/.config/mrps/mrps.conf
 
-[DEFAULT]
-revealjs_path = /home/cnodell/git/reveal.js
-pandoc_path = /usr/bin/pandoc
+    [DEFAULT]
+    revealjs_path = /home/cnodell/git/reveal.js
+    pandoc_path = /usr/bin/pandoc
 
 ## Opening a Markdown File as a Presentation
 
-$ mrps presentation.md
+    $ mrps presentation.md
 
 ## Temporary Files
 
