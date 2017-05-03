@@ -42,8 +42,8 @@ if o_file_full:
     md_file.close()
 
     f = open(html_file_full, 'w')
-    f.write(config['DEFAULT']['html_top'] + '\n' +
-            md_content + 
+    f.write(config['DEFAULT']['html_top'] + '\n\n' +
+            md_content + '\n\n' +
             config['DEFAULT']['html_bottom'])
     f.close()
 
