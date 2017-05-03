@@ -28,6 +28,20 @@ node.js comes with a few themes by default. These are located in reveal.js/css/t
 
 mrps looks for '---' surrounded by empty lines to determine where to seperate horizontal slides and '--' surrounded by empty lines to seperate verticle slides. This is also configurable by editing the ``` <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$"> ``` line under the 'html_top' section of mrps.conf.
 
+### Example of Slide Seperation
+
+ Slide 1.1
+
+ --
+
+ ## Demo 2
+ Slide 1.2
+
+ ---
+
+ ## Demo 2
+ Slide 2
+
 ## Opening a Markdown File as a Presentation
 
     $ python mrps.py presentation.md
