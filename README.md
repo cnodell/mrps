@@ -22,11 +22,11 @@ mrps comes with a simple mrps.conf file. You will need to edit it to match your 
 
 ### Themes
 
-node.js comes with a few themes by default. These are located in reveal.js/css/theme/. To change the theme ust change the line '<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">' under 'html_top' in mrps.conf to specify the desited theme.
+node.js comes with a few themes by default. These are located in reveal.js/css/theme/. To change the theme ust change the line ``` <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme"> ``` under 'html_top' in mrps.conf to specify the desited theme.
 
 ## Seperating Slides
 
-mrps looks for '---' surrounded by empty lines to determine where to seperate horizontal slides and '--' surrounded by empty lines to seperate verticle slides. This is also configurable by editing the '<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">' line under the 'html_top' section of mrps.conf.
+mrps looks for '---' surrounded by empty lines to determine where to seperate horizontal slides and '--' surrounded by empty lines to seperate verticle slides. This is also configurable by editing the ``` <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$"> ``` line under the 'html_top' section of mrps.conf.
 
 ## Opening a Markdown File as a Presentation
 
