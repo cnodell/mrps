@@ -32,21 +32,27 @@ mrps looks for '---' surrounded by empty lines to determine where to seperate ho
 
 ```
 
-## Demo 1
+## Slide 1
 
-Slide 1.1
-
---
-
-## Demo 2
-
-Slide 1.2
+This slide has slide 2 to it's afrter it to the right (--- seperator).
 
 ---
 
-## Demo 2
+## Slide 2
 
-Slide 2
+This slide has Slide 2.2 below it (-- seperator), Slide 1 to it's left (before it) and Slide 3 to it's right (after it).
+
+--
+
+## Slide 2.2
+
+This slide has Slide 2 above it (-- seperator), Slide 1 to it's left (before it) and Slide 3 to it's right (after it).
+
+---
+
+## Slide 3
+
+This slide has slide 2 to it's left (before it).
 
 ```
 
