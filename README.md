@@ -1,33 +1,36 @@
 # mrps
 
-mrps is a script that quickly and easily displays a markdown file as a presentation. It does ths by creating a temporary reveal.js compatible html file using pandoc, copying the reveal.js directory over then opening the resulting files in a minimal "browser" using PyQt5.
+mrps is a script that quickly and easily displays a markdown file as a presentation. It does ths by creating a temporary reveal.js compatible html file, copying the reveal.js directory over then opening the resulting files in a minimal "browser" using PyQt5.
 
 ## Prerequsites
 
-- pandoc
-- reveal.js
-- PyQt5 with PyQt5.qtwebkit (For python3)
 - python3
+- PyQt5 with PyQt5.qtwebkit (For python3)
+- reveal.js
 
-Before using mrps you must first install pandoc and download reveal.js. There is no official meathod for doing this. I installed pandoc using my Linux Distribution's package manager and cloned the reveal.js github repository.
+Before using mrps you must first download reveal.js. There is no official meathod for doing this. I just cloned the reveal.js github repository.
 
-You will also need to have python and PyQt5 installed.
+You will also need to have python and PyQt5 installed (including the PyQt5.qtwebkit).
 
 ## Initial Configuration
 
-mrps does not know where the pandoc binary or the reveal.js directory are located on your system of if pandoc is in your path. It doesn't try to guess either. Instead, it will use whatever you specify in "~/.config/mrps/mrps.conf".
+mrps does not know where the reveal.js directory is located on your system. It doesn't try to guess either. Instead, it will use whatever you specify in "~/.config/mrps/mrps.conf".
 
-mrps will not try and create this file with default values either, it is up to you to create this file and populate it with the values you want to use.
+mrps also needs to know how you want reveal.js configured. This is also specified in the mrps.conf. Details on modifying this can befound at the reveal.js project.
 
-### Example ~/.config/mrps/mrps.conf
+mrps comes with a simple mrps.conf file. You will need to edit it to match your system and move it to ~/.config/mrps/ (creating the directories if needed).
 
-    [DEFAULT]
-    revealjs_path = /home/cnodell/git/reveal.js
-    pandoc_path = /usr/bin/pandoc
+### Themes
+
+node.js comes with a few themes by default. These are located in reveal.js/css/theme/. To change the theme ust change the line "<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">" under 'html_top' in mrps.conf to specify the desited theme.
+
+## Seperating Slides
+
+mrps looks for '---' surrounded by empty lines to determine where to seperate horizontal slides and '--' surrounded by empty lines to seperate verticle slides. This is also configurable by editing the "<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">" line under the 'html_top' section of mrps.conf.
 
 ## Opening a Markdown File as a Presentation
 
-    $ mrps presentation.md
+    $ python mrps.py presentation.md
 
 ## Temporary Files
 

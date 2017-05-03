@@ -4,7 +4,6 @@ import sys
 import configparser
 import os
 import shutil
-import subprocess
 from PyQt5 import QtWidgets
 from PyQt5 import QtWebKitWidgets
 from PyQt5 import QtCore
@@ -14,9 +13,8 @@ from PyQt5 import QtCore
 home_dir = os.path.expanduser("~")
 conf_path = os.path.join(home_dir, ".config/mrps/mrps.conf")
 
-config = configparser.ConfigParser()
+config = configparser.ConfigParser(delimiters=('='))
 config.read(conf_path)
-
 
 def clean_up():
     os.remove(html_file_full)
@@ -38,8 +36,18 @@ if o_file_full:
     html_file_full = os.path.join(o_file_dir, o_file_name_bare + ".html")
 
     shutil.copytree(os.path.normpath(config['DEFAULT']['revealjs_path']), os.path.join(o_file_dir, "reveal.js"))
+    
+    md_file = open(o_file_full, 'r')
+    md_content = md_file.read()
+    md_file.close()
 
-    subprocess.run([os.path.normpath(config['DEFAULT']['pandoc_path']), '-o', html_file_full, '-t', 'revealjs', '-s', o_file_full])
+    f = open(html_file_full, 'w')
+    f.write(config['DEFAULT']['html_top'] + '\n' +
+            md_content + 
+            config['DEFAULT']['html_bottom'])
+    f.close()
+
+
 
     web = QtWebKitWidgets.QWebView()
     web.load(QtCore.QUrl('file://' + html_file_full))
