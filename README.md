@@ -31,17 +31,23 @@ mrps looks for '---' surrounded by empty lines to determine where to seperate ho
 ### Example of Slide Seperation
 
 ```
+
+## Demo 1
+
 Slide 1.1
 
 --
 
 ## Demo 2
+
 Slide 1.2
 
 ---
 
 ## Demo 2
+
 Slide 2
+
 ```
 
 ## Opening a Markdown File as a Presentation
